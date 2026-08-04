@@ -32,4 +32,34 @@ from "users"
 where "email" like '_a%';
 
 
+-- LIKE Operator with Regular Expressions
+
+-- 'ro' at any position in firstName
+-- same as '%ro%'
+select *
+from "accounts"
+where "firstName" ~ 'ro';
+
+-- Starting with 'ro' in firstName
+-- same as 'ro%'
+select *
+from "accounts"
+where "firstName" ~ '^ro';
+
+-- Ending with 'eu' in firstName
+-- same as '%eu'
+select *
+from "accounts"
+where "firstName" ~ 'eu$';
+
+-- Any pattern in firstName, case insensitive
+-- starting with Ry OR anm any where OR ending with ro
+select *
+from "accounts"
+where "firstName" ~* '^Ry|anm|ro$';
+
+
+
+
+
 
