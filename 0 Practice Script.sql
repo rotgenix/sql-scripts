@@ -19,3 +19,11 @@ order by "createdAt"
 limit 10 offset 10;
 
 
+-- JOIN PRACTICE
+SELECT * FROM "bookings"
+INNER JOIN "transfers"
+ON "bookings"."id" = "transfers"."bookingId"
+INNER JOIN "transferOffers"
+ON "transfers"."id" = "transferOffers"."transferId"
+WHERE "bookingNumber"='FR271644045';
+
